@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model App {
+  id            Int            @id @default(autoincrement())
+  appId         String         @unique                // parsed from Play Store URL
+  appName       String
+  playStoreUrl  String
+  screenshots   Screenshot[]   @relation("AppScreenshots")
+  createdAt     DateTime       @default(now())
+}
+
+model Screenshot {
+  id          Int       @id @default(autoincrement())
+  appId       String
+  app         App       @relation("AppScreenshots", fields: [appId], references: [appId])
+  imageUrl    String
+  fileName    String
+  capturedAt  DateTime  @default(now())              // used for "timestamp" in response
+}

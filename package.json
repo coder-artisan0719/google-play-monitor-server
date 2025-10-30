@@ -1,0 +1,38 @@
+{
+  "name": "google-play-monitor-server",
+  "version": "1.0.0",
+  "description": "A Node.js + TypeScript backend for monitoring and capturing Google Play Store app listing screenshots using Playwright.",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npx tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "playwright",
+    "express",
+    "typescript",
+    "google-play",
+    "monitoring",
+    "screenshot"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-cron": "^4.2.1",
+    "playwright": "^1.56.1",
+    "playwright-chromium": "^1.56.1",
+    "prisma": "^6.18.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}
