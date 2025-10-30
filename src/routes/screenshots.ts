@@ -3,10 +3,6 @@ import prisma from "../lib/prisma.js";
 
 const router = Router();
 
-/**
- * GET /api/screenshots/:appId
- * Fetch all screenshots for a given app
- */
 router.get("/:appId", async (req, res) => {
   const { appId } = req.params;
 

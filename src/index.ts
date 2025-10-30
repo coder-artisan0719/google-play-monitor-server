@@ -35,7 +35,7 @@ app.use("/api/apps", appsRouter);
 
 app.get("/", (_req, res) => res.send("✅ Server is running"));
 
-cron.schedule("* * * * *", async () => {
+cron.schedule("0 */12 * * *", async () => {
   console.log("🕒 Cron job started: capturing screenshots for all apps");
 
   try {
@@ -46,7 +46,6 @@ cron.schedule("* * * * *", async () => {
       return;
     }
 
-    // Sequential (safe) capture
     for (const app of apps) {
         console.log(`📸 Capturing ${app.appName}...`);
         try {
